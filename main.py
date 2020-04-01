@@ -1,16 +1,23 @@
 from sport import sport
 from industry import industry
-from news import news
+from news_eco import news_eco
+from news_dsal import news_dsal
+from news_icm import news_icm
 
-import datetime
 
 if __name__ == "__main__":
-    data_sport    = sport()
-    data_industry = industry()
-    data_news = news() #return long list
+    data_sport = sport()          # 體發局
+    data_industry = industry()    # 旅遊局
 
-    print(data_sport)
-    print(data_industry)
-    print(data_news)
-    
-    today = datetime.date.today().strftime('%Y-%m-%d')
+    #return long list
+    data_eco = news_eco()           # 經濟局
+    data_dsal = news_dsal()         # 勞工事務局
+    data_icm = news_icm()           # 文化局 
+
+    data_list = [data_sport, data_industry, data_eco, data_dsal, data_icm]
+
+    for i in data_list:
+        if i[0] == '':
+            continue
+        else:
+            print(i)

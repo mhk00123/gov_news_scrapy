@@ -1,5 +1,7 @@
 from data_scrapy import d_scrapy
+from date_judge import date_judge
 
+# 旅遊局
 def industry():
     link = 'https://industry.macaotourism.gov.mo/cn/pressroom/index.php'
 
@@ -10,11 +12,12 @@ def industry():
     p_title = sp_item[0]
     p_time  = sp_item[1].replace('[','').replace(']','')
 
-    r_item = [p_time, p_title]
+    r_item = [p_time, p_title, '旅遊局']
 
     # print(r_item)
 
-    return r_item
-
-# if __name__ == "__main__":
-#     industry()
+    if(date_judge(p_time)):
+        return r_item
+    else:
+        r_item = ['']
+        return r_item

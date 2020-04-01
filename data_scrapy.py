@@ -1,10 +1,16 @@
 from requests_html import HTMLSession
-
-def d_scrapy(url, target, hd):
-    session = HTMLSession()
-    r = session.get(url, headers = hd)
-    r.html.render(timeout=4, sleep=2)
-    item = r.html.find(target)
-    r.close()
-    
-    return item
+import time 
+def d_scrapy(url, target, hd): #link, CSS Selector, header
+    try:
+        session = HTMLSession()
+        r = session.get(url, headers = hd)
+        time.sleep(2)
+        r.html.render(timeout=4, sleep=2)
+        item = r.html.find(target)
+        r.close()
+    except:
+        r.close()
+        return "None"
+    else:
+        r.close()
+        return item
