@@ -18,7 +18,7 @@ def sport():
     if(date_judge(p_time)):
         return r_item
     else:
-        r_item = ['']
+        r_item = []
         return r_item
 
 # if __name__ == "__main__":

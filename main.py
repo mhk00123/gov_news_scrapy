@@ -16,8 +16,12 @@ if __name__ == "__main__":
 
     data_list = [data_sport, data_industry, data_eco, data_dsal, data_icm]
 
+    # for i in data_list:
+    #     print(i)
+
+
     for i in data_list:
-        if i[0] == '':
+        if len(i) == 0:
             continue
         else:
             print(i)

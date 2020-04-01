@@ -10,7 +10,8 @@ def d_scrapy(url, target, hd): #link, CSS Selector, header
         r.close()
     except:
         r.close()
-        return "None"
+        r_item = ['']
+        return r_item
     else:
         r.close()
         return item
