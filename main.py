@@ -6,8 +6,8 @@ from news_icm import news_icm
 
 
 if __name__ == "__main__":
-    data_sport = sport()          # 體發局
-    data_industry = industry()    # 旅遊局
+    data_sport = sport()            # 體發局
+    data_industry = industry()      # 旅遊局
 
     #return long list
     data_eco = news_eco()           # 經濟局
@@ -19,9 +19,15 @@ if __name__ == "__main__":
     # for i in data_list:
     #     print(i)
 
+    str_content = ''
 
     for i in data_list:
         if len(i) == 0:
             continue
         else:
-            print(i)
+            for j in i:
+                for k in j:
+                    str_content = str_content + k + ' - '
+                str_content = str_content + '\n'
+
+    print(str_content)
