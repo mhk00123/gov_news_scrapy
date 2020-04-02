@@ -1,5 +1,10 @@
-# gov_news_scrapy
 ## 爬取部分政府部門新聞
+
+```
+python 3.8.2
+```
+
+## 使用requests-html處理
 
 ```
 pip install requests-html
