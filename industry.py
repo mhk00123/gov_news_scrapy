@@ -12,7 +12,7 @@ def industry():
     p_title = sp_item[0]
     p_time  = sp_item[1].replace('[','').replace(']','')
 
-    r_item = [p_time, p_title, '旅遊局']
+    r_item = ['旅遊局', p_title, p_time ]
 
     # print(r_item)
 

@@ -25,9 +25,9 @@ def news_icm():
         str1 = i.text.split('\n')
         if "小時前" in str1[2]:
             if('文化局' in str1[1]):
-                temp.append(today)
-                temp.append(str1[0])
                 temp.append(str1[1])
+                temp.append(str1[0])
+                temp.append(today)              
                 data_num.append(temp)
                 temp = []
         else:

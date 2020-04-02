@@ -3,7 +3,7 @@ from industry import industry
 from news_eco import news_eco
 from news_dsal import news_dsal
 from news_icm import news_icm
-
+import datetime
 
 if __name__ == "__main__":
     data_sport = sport()            # 體發局
@@ -19,15 +19,22 @@ if __name__ == "__main__":
     # for i in data_list:
     #     print(i)
 
+    today = datetime.date.today().strftime('%Y-%m-%d')
+
+    str_title = today + '各局新聞'
     str_content = ''
+    
+    p_num = 1
 
     for i in data_list:
         if len(i) == 0:
             continue
         else:
             for j in i:
+                str_content = str_content + str(p_num) + '.) '
                 for k in j:
                     str_content = str_content + k + ' - '
-                str_content = str_content + '\n'
+                str_content = str_content[:-2] + '\n'
+                p_num = p_num + 1
 
     print(str_content)

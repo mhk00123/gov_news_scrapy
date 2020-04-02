@@ -12,7 +12,7 @@ def sport():
     p_time = sp_item[0][0:10]
     p_title  = sp_item[0][10:]
 
-    r_item = [p_time, p_title, '體發局']
+    r_item = ['體發局', p_title, p_time ]
 
     # print(r_item)
     if(date_judge(p_time)):
