@@ -4,6 +4,10 @@ from news_eco import news_eco
 from news_dsal import news_dsal
 from news_icm import news_icm
 import datetime
+import time
+from mailgun_send import send_email
+
+import requests 
 
 if __name__ == "__main__":
     data_sport = sport()            # 體發局
@@ -37,4 +41,14 @@ if __name__ == "__main__":
                 str_content = str_content[:-2] + '\n'
                 p_num = p_num + 1
 
+    time.sleep(2)
+
     print(str_content)
+
+    # Server醬
+    # url = "https://sc.ftqq.com/SCU52896T17559e439d325e78cd0f71bfa5b877945cf68de25a16b.send?text={}&desp={}".format('每日新聞', str_content)
+    
+    # requests.get(url)
+
+    # Mailgun
+    send_email(['leotam@cpttm.org.mo', 'kennis@cpttm.org.mo', 'thomas@cpttm.org.mo'], '(Test)本日新聞', str_content)
